@@ -4,8 +4,6 @@ attrs
 blinker
 click
 colorama
-coreApi
-coreapi
 dnspython
 email-validator
 eventlet

@@ -1,23 +1,21 @@
-FROM python:3.9
+
+FROM debian:latest
+RUN apt update
+RUN apt list --upgradable 
+
+FROM python:3.11
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the application files into the container
+COPY . /app/
 
 
-# set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-COPY requirements.txt .
-
-# install python dependencies
-RUN pip install --upgrade pip
-RUN pip install --upgrade setuptools
+# Install application dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# Expose the port on which the application will run
+EXPOSE 5000
 
-
-
-# Expose the required port (if your application runs on port 5005)
-EXPOSE 8080
-EXPOSE 5005 
-
-CMD ["waitress-serve", "--call", "CoreApi:app"]
+# Command to start the application
+CMD ["python", "run.py"]

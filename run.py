@@ -10,7 +10,7 @@ from   sys import exit
 from apps.dbModels import dbPerform 
 from apps.config import config_dict
 from apps import create_app
-from waitress import serve 
+
 
 
 # WARNING: Don't run with debug turned on in production!
@@ -46,11 +46,6 @@ if DEBUG:
 
 
 if __name__ == "__main__":
-    # Specify the host and port to listen on
-    wHost= '0.0.0.0'
-    wPort = 8080
-
+  
+    app.run(host='0.0.0.0', port=5000)
     
-
-    app.run()(host='0.0.0.0', port=8080)
-    serve(app, host=host, port=port)

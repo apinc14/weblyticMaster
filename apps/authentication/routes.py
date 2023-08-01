@@ -10,6 +10,7 @@ from flask_login import (
     logout_user
 )
 
+
 from apps import login_manager
 from apps.dbModels import dbPerform, dbActionInsertUser, dbActionRetreiveUser
 from apps.authentication import blueprint

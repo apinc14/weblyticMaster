@@ -1,4 +1,0 @@
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/weblennp/repositories/weblytics
-    - /bin/cp -R images $DEPLOYPATH
