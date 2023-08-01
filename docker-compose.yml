@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  appseed-app:
+    container_name: Appseed-app
+    restart: always
+    env_file: .env
+ 
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+       - "5005:5005"
+    networks:
+      - mysqlnet
+      -  webCon
+  nginx:
+    container_name: nginx
+    restart: always
+    image: "nginx:latest"
+    ports:
+      - "80:80"
+  
+    volumes:
+      - ./nginx:/etc/nginx/appseed_app.conf
+    networks:
+      - mysqlnet
+      -  webCon
+  
+    depends_on: 
+      - appseed-app
+    
+networks:
+  mysqlnet:
+    driver: bridge
+  webCon:
+    driver: bridge
+
+ 
