@@ -1,8 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\apps"
+    "\\apps",
+    "\\apps\\authentication",
+    "\\apps\\home",
+    "\\apps\\static",
+    "\\apps\\templates",
+    "\\apps\\templates\\accounts",
+    "\\apps\\templates\\home",
+    "\\apps\\templates\\includes",
+    "\\apps\\templates\\layouts"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\apps\\templates\\home\\cover.html",
   "PreviewInSolutionExplorer": false
 }
