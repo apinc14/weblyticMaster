@@ -26,7 +26,8 @@ def route_default():
    return redirect(url_for('home_blueprint.cover'))
 
 
-# Login & Registration
+
+
 
 @blueprint.route('/login', methods=['GET', 'POST'])
 def login():

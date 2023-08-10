@@ -11,28 +11,12 @@ services:
     ports:
        - "5000:5000"
     networks:
-      - mysqlnet
-      -  webCon
-  nginx:
-    container_name: nginx
-    restart: always
-    image: "nginx:latest"
-    ports:
-      - "80:80"
-  
-    volumes:
-      - ./nginx:/etc/nginx/appseed_app.conf
-    networks:
-      - mysqlnet
-      -  webCon
-  
-    depends_on: 
-      - appseed-app
+      - weblyticHome 
     
+
 networks:
-  mysqlnet:
+  weblyticHome:
     driver: bridge
-  webCon:
-    driver: bridge
+
 
  
