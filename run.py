@@ -10,7 +10,8 @@ from   sys import exit
 from apps.dbModels import dbPerform 
 from apps.config import config_dict
 from apps import create_app
-
+from flask import Flask
+from apps.authentication.authentication_blueprint import blueprint as authentication_blueprint
 
 
 # WARNING: Don't run with debug turned on in production!
@@ -30,14 +31,15 @@ except KeyError:
     exit('Error: Invalid <config_mode>. Expected values [Debug, Production] ')
 
 app = create_app(app_config)
-
+# Register the authentication blueprint
+app.register_blueprint(authentication_blueprint, url_prefix='/authentication')
 
 if not DEBUG:
     Minify(app=app, html=True, js=False, cssless=False)
-    print('production')
+    
     
 if DEBUG:
-    #print('debugging')
+    
     app.logger.info('DEBUG            = ' + str(DEBUG)             )
    
     app.logger.info('Page Compression = ' + 'FALSE' if DEBUG else 'TRUE' )

@@ -1,22 +1,20 @@
 version: '3.8'
 services:
-  appseed-app:
-    container_name: Appseed-app
+  app:
+    container_name: app
     restart: always
     env_file: .env
  
     build: 
       context: .
       dockerfile: Dockerfile
-    ports:
-       - "5000:5000"
     networks:
-      - weblyticHome 
-    
+      - weblyticsHome 
+    ports:
+      - 5000:5000
 
 networks:
-  weblyticHome:
-    driver: bridge
+  weblyticsHome:
+    external: true
 
 
- 

@@ -10,10 +10,10 @@ def init_Db():
     load_dotenv(envPath)
     
     dbCon = pymysql.connect(
-            user=os.environ.get('DB_USER'),
-            password=os.environ.get('DB_PASSWORD'),
-            host=os.environ.get('IP_ADDRESS'),
-            database=os.environ.get('DB_NAME')
+        user=os.environ.get('DB_USER'),
+        password=os.environ.get('DB_PASSWORD'),
+        host=os.environ.get('IP_ADDRESS'),
+        database=os.environ.get('DB_NAME')
      )
     
     # Connect to the database
@@ -28,7 +28,7 @@ def dbPerform( action, isInboundBool ):
         if inboundBool: 
          # Execute the create table queries
          cursor.execute(action)
-         print('Database manipulated successfully.')
+         
         else: 
             retrievedInfo = cursor.execute(action)
             print('Database manipulated successfully.')

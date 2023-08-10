@@ -63,10 +63,10 @@ def user_loader(uid):
 def request_loader(request):
     
     username = request.form.get('username')
-    print(" request made")
+    
     
     if username:
-        print("user requested")
+       
         user = dbPerform(dbActionRetreiveUser(username), True)
         return user if user else None
     return None

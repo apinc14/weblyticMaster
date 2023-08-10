@@ -16,16 +16,21 @@ from apps.dbModels import dbPerform, dbActionInsertUser, dbActionRetreiveUser
 from apps.authentication import blueprint
 from apps.authentication.forms import LoginForm, CreateAccountForm
 from apps.authentication.models import Users
-
+from flask import Blueprint, render_template, redirect, url_for
 from apps.authentication.util import verify_pass
 
+blueprint = Blueprint('authentication_blueprint', __name__)
 
 @blueprint.route('/')
 def route_default():
-   # return redirect(url_for('authentication_blueprint.login'))
-   return redirect(url_for('home_blueprint.cover'))
+    response = redirect(url_for('home_blueprint.cover'))
+      # Set security headers
+    response.headers['X-Frame-Options'] = 'DENY'  # or 'SAMEORIGIN' if needed
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-src 'none'"
 
-
+    return response
 
 
 
@@ -86,7 +91,7 @@ def register():
         # else we can create the user
         user = Users(**request.form)
         dbPerform(dbActionInsertUser('users',username, email, 0), False)
-        print('user created')
+       
         #tableName, db, name, password, email, billingDate, isPremium
 
         # Delete user from session
