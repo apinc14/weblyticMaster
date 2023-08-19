@@ -3,7 +3,6 @@
     margin-bottom: 12px;
     position: relative;
 }
-
 .form-check{
     .form-check-label{
         display: inline-block;
@@ -13,7 +12,6 @@
         line-height: 26px;
         margin-bottom: 0;
     }
-
     .form-check-sign::before,
     .form-check-sign::after{
         font-family: 'FontAwesome';
@@ -49,14 +47,10 @@
             cursor: not-allowed;
         }
     }
-
 }
-
 .form-check.disabled .form-check-label,
 .form-check.disabled .form-check-label {
-
 }
-
 .form-check input[type="checkbox"],
 .form-check-radio input[type="radio"]{
     opacity: 0;
@@ -66,17 +60,14 @@
 .form-check input[type="checkbox"]:checked + .form-check-sign::after{
     opacity: 1;
 }
-
 .form-control input[type="checkbox"]:disabled + .form-check-sign::before,
 .checkbox input[type="checkbox"]:disabled + .form-check-sign::after{
     cursor: not-allowed;
 }
-
 .form-check .form-check-label input[type="checkbox"]:disabled + .form-check-sign,
 .form-check-radio input[type="radio"]:disabled + .form-check-sign{
     pointer-events: none !important;
 }
-
 .form-check-radio{
     .form-check-label{
         padding-left: 2rem;
@@ -89,7 +80,6 @@
         }
     }
 }
-
 .form-check-radio .form-check-sign::before{
     font-family: 'FontAwesome';
     content: "\f10c";
@@ -102,11 +92,9 @@
     left: 5px;
     top: -5px;
 }
-
 .form-check-label input[type="checkbox"]:checked + .form-check-sign:before{
     // background-color: #66615B;
 }
-
 .form-check-radio input[type="radio"] + .form-check-sign:after,
 .form-check-radio input[type="radio"] {
     opacity: 0;
@@ -118,7 +106,6 @@
     content:" ";
     display: block;
 }
-
 .form-check-radio input[type="radio"]:checked + .form-check-sign::after {
     font-family: 'FontAwesome';
     content: "\f192";
@@ -128,12 +115,9 @@
     opacity: 1;
     font-size: 22px;
 }
-
 .form-check-radio input[type="radio"]:checked + .form-check-sign::after{
     opacity: 1;
 }
-
-
 .form-check-radio input[type="radio"]:disabled + .form-check-sign::before,
 .form-check-radio input[type="radio"]:disabled + .form-check-sign::after {
     color: $dark-gray;

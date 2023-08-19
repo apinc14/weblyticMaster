@@ -6,13 +6,11 @@ body,
 }
 a{
   color: $info-color;
-
   &:hover, &:focus{
      color: $info-states-color;
      text-decoration: none;
   }
 }
-
 a:focus, a:active,
 button::-moz-focus-inner,
 input::-moz-focus-inner,
@@ -28,7 +26,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{
 input:focus {
     outline : 0 !important;
 }
-
 /*           Animations              */
 .form-control,
 .input-group-addon,
@@ -37,12 +34,10 @@ input:focus {
 .navbar .alert{
     @include transition($general-transition-time, $transition-linear);
 }
-
 .sidebar .nav a,
 .table > tbody > tr .td-actions .btn{
     @include transition($fast-transition-time, $transition-ease-in);
 }
-
 .btn{
     @include transition($ultra-fast-transition-time, $transition-ease-in);
 }
@@ -53,15 +48,12 @@ input:focus {
 .margin-top{
     margin-top: 50px;
 }
-
 .wrapper{
     position: relative;
     top: 0;
     height: 100vh;
 }
-
 // documentation
-
 .page-header{
     .page-header-image{
         background-position: center center;
@@ -89,13 +81,11 @@ input:focus {
         z-index: 2;
     }
 }
-
 .documentation .page-header,
 .documentation .page-header-image,
 .documentation .page-header-image .filter:after{
     height: 100vh;
 }
-
 .documentation .footer{
     z-index: 3;
 }

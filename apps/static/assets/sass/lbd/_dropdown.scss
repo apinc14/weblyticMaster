@@ -6,10 +6,8 @@
     display: block;
     z-index: 9000;
     position: absolute;
-
     @include opacity(0);
     @include box-shadow($dropdown-shadow);
-
     .show &{
         @include opacity(1);
         visibility: visible;
@@ -25,11 +23,9 @@
     .select.show &{
         margin-top: -1px;
     }
-
     .dropdown-item {
        padding: $padding-base-vertical $padding-base-horizontal;
        color: #333333;
-
        img{
            margin-top: -3px;
        }
@@ -37,26 +33,21 @@
     .dropdown-item:focus{
         outline: 0 !important;
     }
-
     .btn-group.select &{
         min-width: 100%;
     }
-
     > li:first-child > a{
        border-top-left-radius: $border-radius-extreme;
        border-top-right-radius: $border-radius-extreme;
     }
-
     > li:last-child > a{
         border-bottom-left-radius: $border-radius-extreme;
         border-bottom-right-radius: $border-radius-extreme;
     }
-
     .select & > li:first-child > a{
         border-radius: 0;
         border-bottom: 0 none;
     }
-
     .dropdown-item:hover,
     .dropdown-item:focus {
         background-color: $smoke-bg;
@@ -64,7 +55,6 @@
         opacity: 1;
         text-decoration: none;
     }
-
     &.dropdown-blue > li > a:hover,
     &.dropdown-blue > li > a:focus{
         background-color: $light-blue;
@@ -85,7 +75,6 @@
     &.dropdown-red > li > a:focus{
         background-color: $light-red;
     }
-
     .dropdown-item{
         i[class*="nc-icon"]{
             font-size: 18px;
@@ -95,7 +84,6 @@
             padding-right: 10px;
         }
     }
-
     &.dropdown-menu-right{
         &:before,
         &:after{
@@ -103,9 +91,7 @@
             left: auto !important;
         }
     }
-
 }
-
 .dropdown-with-icons{
     > li > a{
         padding-left: 0px;
@@ -115,7 +101,6 @@
         text-align: center;
         line-height: 28px;
         float: left;
-
         &[class^="pe-"]{
              font-size: 24px;
              width: 46px;
@@ -126,7 +111,6 @@
         }
     }
 }
-
 //fix bug for the select items in btn-group
 .btn-group.select{
     overflow: hidden;

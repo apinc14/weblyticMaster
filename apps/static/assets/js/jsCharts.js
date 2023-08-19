@@ -13,7 +13,6 @@ function createBarChart(data, options, targetElementId) {
         categories: options.categories,
       },
     });
-  
     // Render the chart
     chart.render();
   }

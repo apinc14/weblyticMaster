@@ -1,29 +1,21 @@
 ﻿{% extends "layouts/base.html" %}
-
 {% block title %} Dashboard {% endblock %}
-
-
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
-
 {% block content %}
-
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="check" viewBox="0 0 16 16">
         <title>Check</title>
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
     </symbol>
 </svg>
-
 <div class="container py-3">
     <header>
-       
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
             <h1 class="display-4 fw-normal">Unlock Limitless Insights with Our Premium Subscriptions</h1>
             <p class="fs-5 text-muted">Elevate your data-driven decisions with our Premium Subscription, unlocking personalized emailed updates, favorite trending topics, and powerful features like Predictive Analytics, Advanced Data Visualization and data exporting. </p>
         </div>
     </header>
-
     <main>
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
             <div class="col">
@@ -56,10 +48,7 @@
                             <li>Predictive analytics </li>
                             <li>Priority email support</li>
                         </ul>
-
-
                         <button type="button" class="w-100 btn btn-lg btn-primary" onclick="window.location.href = '/checkout.html';">Get started</button>
-
                     </div>
                 </div>
             </div>
@@ -76,16 +65,12 @@
                             <li>Full access to public data</li>
                             <li>All premium bonuses</li>
                         </ul>
-                       
                             <button type="button" class="w-100 btn btn-lg btn-primary" onclick="window.location.href = '/apply.html';">Apply here</button>
-                       
                     </div>
                 </div>
             </div>
         </div>
-
         <h2 class="display-6 text-center mb-4">Compare plans</h2>
-
         <div class="table-responsive">
             <table class="table text-center">
                 <thead>
@@ -115,8 +100,6 @@
                         <td><svg class="bi" width="24" height="24"><use xlink:href="#check" /></svg></td>
                         <td><svg class="bi" width="24" height="24"><use xlink:href="#check" /></svg></td>
                     </tr>
-
-
                     <tr>
                         <th scope="row" class="text-start">Advanced Data Visualization</th>
                         <td></td>
@@ -151,24 +134,16 @@
             </table>
         </div>
     </main>
-
-       
 </div>
-
-
 <!-- html goes here -->
     {% endblock content %}
 <!-- Specific Page JS goes HERE  -->
     {% block javascripts %}
-
 <script type="text/javascript">
     $(document).ready(function () {
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
-
         demo.showNotification();
-
     });
 </script>
-
     {% endblock javascripts %}

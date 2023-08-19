@@ -2,15 +2,11 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 """
-
 from json import JSONEncoder
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField
 from wtforms.validators import Email, DataRequired
-
 # login and registration
-
-
 class LoginForm(FlaskForm):
     username = StringField('Email',
                          id='username_login',
@@ -18,8 +14,6 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password',
                              id='pwd_login',
                              validators=[DataRequired()])
-
-
 class CreateAccountForm(FlaskForm):
     username = StringField('Username',
                          id='username_create',

@@ -6,7 +6,6 @@
  * @author Mattia Larentis <mattia@larentis.eu> (http://larentis.eu)
  * @license Apache-2.0
  */
-
 (function(a, b) {
     if ('function' == typeof define && define.amd) define(['jquery'], b);
     else if ('undefined' != typeof exports) b(require('jquery'));
@@ -17,7 +16,6 @@
     }
 })(this, function(a) {
     'use strict';
-
     function c(j, k) {
         if (!(j instanceof k)) throw new TypeError('Cannot call a class as a function')
     }

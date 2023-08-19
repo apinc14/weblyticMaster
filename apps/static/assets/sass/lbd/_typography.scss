@@ -20,12 +20,10 @@ button.close{
     font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
     font-weight: $font-weight-normal;
 }
-
 h1, .h1, h2, .h2, h3, .h3, h4, .h4{
     font-weight: $font-weight-light;
     margin: $margin-large-vertical 0 $margin-base-vertical;
 }
-
 h1, .h1 {
     font-size: $font-size-h1;
 }
@@ -53,22 +51,18 @@ p{
     font-size: $font-paragraph;
     line-height: $line-height-general;
 }
-
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
     color: $dark-gray;
     font-weight: $font-weight-light;
     line-height: $line-height-general;
 }
-
 h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
     font-size: 60%;
 }
-
 h1 .subtitle{
     display: block;
     margin: 0 0 $margin-large-vertical;   
 }
-
 .text-muted{
     color: #9A9A9A;
 }
@@ -87,4 +81,3 @@ h1 .subtitle{
 .text-danger, .text-danger:hover{
     color: $danger-color !important;
 }
-

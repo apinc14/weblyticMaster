@@ -1,13 +1,8 @@
 # MIT License
-
 Copyright (c) 2019 - present [AppSeed](http://appseed.us/)
-
 <br />
-
 ## Licensing Information
-
 <br />
-
 | Item | - |
 | ---------------------------------- | --- |
 | License Type | MIT  |
@@ -25,8 +20,6 @@ Copyright (c) 2019 - present [AppSeed](http://appseed.us/)
 | Create HTML/CSS template for sale | NO |
 | Create Theme/Template for CMS for sale | NO |
 | Separate sale of our UI Elements | NO |
-
 <br />
-
 ---
 For more information regarding licensing, please contact the AppSeed Service < *support@appseed.us* >

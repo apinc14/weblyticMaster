@@ -23,7 +23,6 @@
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-
 .bootstrap-switch .bootstrap-switch-container {
   display: inline-flex;
   top: 0;
@@ -33,7 +32,6 @@
   transform: translate3d(0, 0, 0);
   width: 100px !important;
 }
-
 .bootstrap-switch .bootstrap-switch-handle-on,
 .bootstrap-switch .bootstrap-switch-handle-off,
 .bootstrap-switch .bootstrap-switch-label {
@@ -50,13 +48,11 @@
     line-height: 15px;
     -webkit-transition: 0.25s ease-out;
     transition: 0.25s ease-out;
-
     i{
         font-size: 12px;
         line-height: 14px;
   }
 }
-
 .bootstrap-switch .bootstrap-switch-handle-on,
 .bootstrap-switch .bootstrap-switch-handle-off {
   text-align: center;
@@ -65,8 +61,6 @@
   width: 50% !important;
   background-color: $info-color;
 }
-
-
 .bootstrap-switch .bootstrap-switch-label {
   text-align: center;
   z-index: 100;
@@ -82,16 +76,13 @@
   background-color: #FFFFFF;
   box-shadow: 0 1px 1px #FFFFFF inset, 0 1px 1px rgba(0, 0, 0, 0.25);
 }
-
 .bootstrap-switch .bootstrap-switch-handle-on {
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
 }
-
 .bootstrap-switch .bootstrap-switch-handle-off {
   text-indent: 6px;
 }
-
 .bootstrap-switch input[type='radio'],
 .bootstrap-switch input[type='checkbox'] {
   position: absolute !important;
@@ -101,27 +92,20 @@
   filter: alpha(opacity=0);
   z-index: -1;
 }
-
-
 .bootstrap-switch.bootstrap-switch-animate .bootstrap-switch-container {
   -webkit-transition: margin-left 0.5s;
   transition: margin-left 0.5s;
 }
-
-
 .bootstrap-switch.bootstrap-switch-on .bootstrap-switch-container {
   margin-left: -2px !important;
 }
-
 .bootstrap-switch.bootstrap-switch-off .bootstrap-switch-container {
   margin-left: -37px !important;
 }
-
 .bootstrap-switch.bootstrap-switch-on:hover .bootstrap-switch-label {
   width: 26px !important;
   margin: 2px -15px;
 }
-
 .bootstrap-switch.bootstrap-switch-off:hover .bootstrap-switch-label {
   width: 26px !important;
   margin: 2px -15px -13px -11px;

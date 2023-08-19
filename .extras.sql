@@ -5,9 +5,6 @@
             email VARCHAR(40) NOT NULL, 
             activePremium BIT NOT NULL,
             BillingDate DATE  );
-
-      
-        
     CREATE TABLE IF NOT EXISTS newsArticles 
         (id INT AUTO_INCREMENT PRIMARY KEY,
         category	TEXT,
@@ -27,6 +24,5 @@
         spent	INTEGER,
         bounce_rate	REAL,
         location_name	TEXT  );
-       
       proxy_set_header Host $host:$server_port;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

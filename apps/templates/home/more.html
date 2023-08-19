@@ -1,12 +1,8 @@
 ﻿{% extends "layouts/base.html" %}
-
 {% block title %} Dashboard {% endblock %}
-
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
-
 {% block content %}
-
 <div class="card strpied-tabled-with-hover">
     <div class="card-header ">
         <h4 class="card-title">Mixed</h4>
@@ -93,7 +89,6 @@
                     <td>Chile</td>
                     <td>Gloucester</td>
                     <td class="topicPic"><img src="https://picsum.photos/50"></td>
-
                 </tr>
                 <tr>
                     <td>6</td>
@@ -145,7 +140,6 @@
                     <td>Chile</td>
                     <td>Gloucester</td>
                     <td class="topicPic"><img src="https://picsum.photos/50"></td>
-
                 </tr>
             </tbody>
         </table>
@@ -154,15 +148,11 @@
 {% endblock content %}
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
-
 <script type="text/javascript">
     $(document).ready(function () {
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
-
         demo.showNotification();
-
     });
 </script>
-
 {% endblock javascripts %}

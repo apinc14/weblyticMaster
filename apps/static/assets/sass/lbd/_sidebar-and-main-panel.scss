@@ -11,7 +11,6 @@ body > .navbar-collapse{
     font-weight: 200;
     background-size: cover;
     background-position: center center;
-
     .sidebar-wrapper{
         position: relative;
         max-height: calc(100vh - 75px);
@@ -21,7 +20,6 @@ body > .navbar-collapse{
         z-index: 4;
         padding-bottom: 100px;
     }
-
     .sidebar-background{
         position: absolute;
         z-index: 1;
@@ -33,13 +31,11 @@ body > .navbar-collapse{
         background-size: cover;
         background-position: center center;
     }
-
     .logo{
         padding: 10px 15px 9px 15px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         position: relative;
         z-index: 4;
-
         p{
             float: left;
             font-size: 20px;
@@ -48,7 +44,6 @@ body > .navbar-collapse{
             line-height: 20px;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
-
         .simple-text{
             text-transform: uppercase;
             padding: $padding-small-vertical $padding-zero;
@@ -60,7 +55,6 @@ body > .navbar-collapse{
             line-height: 30px;
         }
     }
-
     .logo-tim{
         border-radius: 50%;
         border: 1px solid #333;
@@ -69,18 +63,15 @@ body > .navbar-collapse{
         width: 61px;
         float: left;
         overflow: hidden;
-
         img{
             width: 60px;
             height: 60px;
         }
     }
-
     .nav{
         margin-top: 20px;
         float: none;
         display: block;
-
         li{
             .nav-link{
                 color: $white-color;
@@ -89,12 +80,10 @@ body > .navbar-collapse{
                 border-radius: 4px;
                 display: block;
                 padding: 10px 15px;
-
                 &:hover{
                     background: rgba(255, 255, 255, 0.13);
                     opacity: 1;
                 }
-
                 p{
                     margin: 0;
                     line-height: 31px;
@@ -103,7 +92,6 @@ body > .navbar-collapse{
                     text-transform: uppercase;
                     display: inline-flex;
                 }
-
                 i{
                     font-size: 28px;
                     margin-right: 15px;
@@ -113,49 +101,36 @@ body > .navbar-collapse{
                     float: left;
                 }
             }
-
             &:hover .nav-link{
                 background: rgba(255,255,255,0.13);
                 opacity: 1;
             }
-
             &.active .nav-link{
                 color: $white-color;
                 opacity: 1;
                 background: rgba(255,255,255,0.23);
-
             }
-
             &.separator{
                 margin: 15px 0;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
                 & + .nav-item {
                     margin-top: 31px;
                 }
             }
-
         }
-
-
-
         .caret{
             margin-top: 13px;
             position: absolute;
             right: 30px;
         }
-
         .active-pro{
             position: absolute;
             width: 100%;
             bottom: 10px;
-
             a{
                 color: $white-color !important;
-
             }
         }
-
         .nav-link{
             color: $white-color;
             margin: 5px 15px;
@@ -167,11 +142,9 @@ body > .navbar-collapse{
             font-weight: 600;
         }
     }
-
     .logo{
         padding: $navbar-padding-a;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
         p{
             float: left;
             font-size: 20px;
@@ -180,7 +153,6 @@ body > .navbar-collapse{
             line-height: 20px;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
-
         .simple-text{
             text-transform: uppercase;
             padding: $padding-small-vertical $padding-zero;
@@ -192,7 +164,6 @@ body > .navbar-collapse{
             line-height: 30px;
         }
     }
-
     .logo-tim{
         border-radius: 50%;
         border: 1px solid #333;
@@ -201,13 +172,11 @@ body > .navbar-collapse{
         width: 61px;
         float: left;
         overflow: hidden;
-
         img{
             width: 60px;
             height: 60px;
         }
     }
-
     &:after,
     &:before{
         display: block;
@@ -219,23 +188,19 @@ body > .navbar-collapse{
         left: 0;
         z-index: 2;
     }
-
     &:before{
         opacity: .33;
         background: #000000;
     }
-
     &:after{
        @include icon-gradient($new-purple, $purple-color-bottom);
        z-index: 3;
        opacity: 1;
     }
-
     &[data-image]:after,
     &.has-image:after{
         opacity: .77;
     }
-
     &[data-color="black"]:after{
         @include icon-gradient($default-states-color, $default-states-color);
     }
@@ -258,29 +223,23 @@ body > .navbar-collapse{
         @include icon-gradient($new-purple, $purple-color-bottom);
     }
 }
-
-
 .main-panel{
     background: rgba(203,203,210,.15);
     position: relative;
     float: right;
     width: $sidebar-width;
     min-height: 100%;
-
     > .content{
         padding: 30px 15px;
         min-height: calc(100% - 123px);
     }
-
     > .footer{
         border-top: 1px solid #e7e7e7;
     }
-
     .navbar{
         margin-bottom: 0;
     }
 }
-
 .sidebar,
 .main-panel{
     overflow: auto;
@@ -294,10 +253,7 @@ body > .navbar-collapse{
     transition-timing-function: linear,linear;
     -webkit-overflow-scrolling: touch;
 }
-
-
 .fixed-plugin{
-
     .dropdown{
         .dropdown-menu{
             @include transform-translate-3d-0(-5%);
@@ -318,12 +274,9 @@ body > .navbar-collapse{
                 left: -303px !important;
             }
             }
-
         }
     }
-
 }
-
 .fixed-plugin .dropdown .dropdown-menu{
     @include transform-translate-y-dropdown(-5%);
     top: -40px !important;
@@ -337,7 +290,6 @@ body > .navbar-collapse{
     transform-origin: 0 0;
     left: -303px !important;
 }
-
 .fixed-plugin .dropdown-menu:before,
 .fixed-plugin .dropdown-menu:after{
     content: "";
@@ -348,7 +300,6 @@ body > .navbar-collapse{
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
-
 }
 .fixed-plugin .dropdown-menu:before{
     border-bottom: 16px solid rgba(0, 0, 0, 0);
@@ -356,14 +307,12 @@ body > .navbar-collapse{
     border-top: 16px solid rgba(0,0,0,0);
     right: -16px;
 }
-
 .fixed-plugin .dropdown-menu:after{
     border-bottom: 16px solid rgba(0, 0, 0, 0);
     border-left: 16px solid #fff;
     border-top: 16px solid rgba(0,0,0,0);
     right: -15px;
 }
-
 .modal{
     &.show{
         .modal-dialog{
@@ -385,7 +334,6 @@ body > .navbar-collapse{
             padding-right: 24px;
             padding-bottom: 0;
             padding-left: 24px;
-
             .modal-profile{
                 width: 80px;
                 height: 80px;
@@ -393,14 +341,12 @@ body > .navbar-collapse{
                 text-align: center;
                 line-height: 5.7;
                 box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
-
                 i{
                     font-size: 32px;
                     padding-top: 24px;
                 }
             }
         }
-
         .modal-body{
             padding-top: 24px;
             padding-right: 24px;
@@ -408,11 +354,9 @@ body > .navbar-collapse{
             padding-left: 24px;
             line-height: 1.9;
         }
-
         .modal-body + .modal-footer{
             padding-top: 0;
         }
-
         .modal-footer{
             border-top: none;
             padding-right: 24px;
@@ -420,13 +364,11 @@ body > .navbar-collapse{
             padding-left: 24px;
             -webkit-justify-content: space-between;
             justify-content: space-between;
-
             .btn{
                 margin: 0;
                 padding-left: 16px;
                 padding-right: 16px;
                 width: auto;
-
                 &:hover,
                 &focus{
                     text-decoration: none;

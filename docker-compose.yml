@@ -4,7 +4,6 @@ services:
     container_name: app
     restart: always
     env_file: .env
- 
     build: 
       context: .
       dockerfile: Dockerfile
@@ -12,9 +11,6 @@ services:
       - weblyticsHome 
     ports:
       - 5000:5000
-
 networks:
   weblyticsHome:
     external: true
-
-

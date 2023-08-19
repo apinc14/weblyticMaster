@@ -2,7 +2,6 @@
     border-radius: $border-radius-base;
     background-color: $white-color;
     margin-bottom: 30px;
-
     .card-image{
         width: 100%;
         overflow: hidden;
@@ -12,7 +11,6 @@
         -webkit-transform-style: preserve-3d;
         -moz-transform-style: preserve-3d;
         transform-style: preserve-3d;
-
         img {
             width: 100%;
         }
@@ -26,9 +24,7 @@
         width: 100%;
         height: 100%;
         text-align: center;
-
         @include opacity(0);
-
         .btn{
             @include vertical-align();
         }
@@ -49,7 +45,6 @@
         padding: 15px 15px 0;
         background-color: $white-color;
         border-bottom: none !important;
-
     }
     .card-category,
     label{
@@ -57,18 +52,15 @@
         font-weight: $font-weight-normal;
         color: $dark-gray;
         margin-bottom: 0px;
-
         i{
             font-size: $font-paragraph;
         }
     }
-
     label{
         font-size: $font-size-small;
         margin-bottom: 5px;
         text-transform: uppercase;
     }
-
     .card-title{
         margin: $none;
         color: $black-color;
@@ -91,11 +83,9 @@
         line-height: 30px;
         border-top: none !important;
         font-size: 14px;
-
         .legend{
             padding: 5px 0;
         }
-
         hr{
             margin-top: 5px;
             margin-bottom: 5px;
@@ -107,7 +97,6 @@
     .card-footer div{
         display: inline-block;
     }
-
     .author{
         font-size: $font-size-small;
         font-weight: $font-weight-bold;
@@ -129,49 +118,38 @@
         card-body: "";
         position: absolute;
     }
-
     .ct-chart{
         margin: 30px 0 30px;
         height: 245px;
     }
-
     .ct-label{
         font-size: 1rem !important;
     }
-
     .table{
         tbody td:first-child,
         thead th:first-child{
             padding-left: 15px;
         }
-
         tbody td:last-child,
         thead th:last-child{
             padding-right: 15px;
             display: inline-flex;
         }
     }
-
     .alert{
         border-radius: $border-radius-base;
         position: relative;
-
         &.alert-with-icon{
             padding-left: 65px;
         }
     }
 }
-
-
-
 .card-stats{
     .card-body{
         padding: 15px 15px 0px;
-
         .numbers{
             font-size: 1.8rem;
             text-align: right;
-
             p{
                 margin-bottom: 0;
             }
@@ -179,22 +157,16 @@
     }
     .card-footer{
         padding: 0px 15px 10px 15px;
-
-
     }
     .icon-big {
         font-size: 3em;
         min-height: 64px;
-
         i{
             font-weight: 700;
             line-height: 59px;
         }
     }
-
-
 }
-
 .card-user{
     .card-image{
         height: 110px;
@@ -214,7 +186,6 @@
         border: 5px solid #FFFFFF;
         position: relative;
         margin-bottom: 15px;
-
         &.border-gray{
             border-color: #EEEEEE;
         }
@@ -226,7 +197,6 @@
         min-height: 240px;
     }
 }
-
 .card-user,
 .card-price{
     .card-footer{
@@ -240,15 +210,12 @@
     background-color: transparent;
     box-shadow: none;
     border-radius: 0;
-
     .card-image{
         border-radius: 4px;
     }
 }
-
 .card.card-plain{
     border: none !important;
-
     .card-header{
         background-color: transparent !important;
     }

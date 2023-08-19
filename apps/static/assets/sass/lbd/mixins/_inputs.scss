@@ -2,16 +2,13 @@
     padding: $padding-vertical $padding-horizontal;
     height: $height;
 }
-
 @mixin placeholder($color, $opacity){
    color: $color;
    @include opacity(1);
 }
-
 @mixin light-form(){
     border-radius: 0;
     border:0;
     padding: 0;
     background-color: transparent;
-
 }

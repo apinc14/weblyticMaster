@@ -10,7 +10,6 @@
 .form-control:-ms-input-placeholder{
    @include placeholder($medium-gray,1);
 }
-
 .form-control {
     background-color: $white-bg;
     border: 1px solid $light-gray;
@@ -18,7 +17,6 @@
     color: #565656;
     @include input-size($padding-base-vertical, $padding-base-horizontal - 4, $height-base);
     @include box-shadow(none);
-    
     &:focus{
            background-color: $white-bg;
            border: 1px solid $medium-dark-gray;
@@ -26,7 +24,6 @@
            outline: 0 !important;    
            color: #333333;   
     }
-    
     .has-success &,
     .has-error &,
     .has-success &:focus,
@@ -34,7 +31,6 @@
         border-color: $light-gray;
         @include box-shadow(none);
     }
-    
     .has-success &{
         color: $success-color;
     }
@@ -47,7 +43,6 @@
     .has-error &:focus{
         border-color: $danger-color;
     }
-    
     & + .form-control-feedback{
         border-radius: $border-radius-large;
         font-size: $font-size-base;
@@ -57,18 +52,15 @@
         top: 50%;
         vertical-align: middle;
     }
-    
     .open &{
         border-radius: $border-radius-base $border-radius-base 0 0;
         border-bottom-color: transparent;
     }
 }
-
 .input-lg{
     height: 55px;
     padding: $padding-large-vertical $padding-large-horizontal;
 }
-
 .has-error{
     .form-control-feedback{
         color: $danger-color;
@@ -79,13 +71,10 @@
         color: $success-color
     }
 }
-
-
 .input-group-addon {
     background-color: $white-color;
     border: 1px solid $light-gray;
     border-radius: $border-radius-base;
-    
     .has-success &,
     .has-error &{
         background-color: $white-color;
@@ -105,7 +94,6 @@
         border-color: $dark-gray;
     }
 }
-
 .input-group .form-control:first-child, 
 .input-group-addon:first-child,  
 .input-group-btn:first-child > .dropdown-toggle, 
@@ -123,7 +111,6 @@
     color: $default-color;
     cursor: not-allowed;
 }
-
 .input-group-btn .btn{
     border-width: $border-thin;
     padding: $padding-round-vertical $padding-base-horizontal;
@@ -131,11 +118,9 @@
 .input-group-btn .btn-default:not(.btn-fill){
     border-color: $medium-gray;
 }
-
 .input-group-btn:last-child > .btn{
     margin-left: 0;
 }
-
 .input-group-focus .input-group-addon{
     border-color: $dark-gray;
 }

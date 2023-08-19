@@ -1,7 +1,6 @@
 @mixin navbar-color($color){
     background-color: $color;
 }
-
 @mixin center-item(){
     left: 0;
     right: 0;

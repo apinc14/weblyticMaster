@@ -2,7 +2,6 @@
 @mixin btn-styles($btn-color, $btn-states-color) {
   border-color: $btn-color;
   color: $btn-color;
-  
   &:hover,
   &:focus,
   &:active,
@@ -12,7 +11,6 @@
     color: $btn-states-color;
     border-color: $btn-states-color;
   }
-  
   &.disabled,
   &:disabled,
   &[disabled],
@@ -27,13 +25,10 @@
           border-color: $btn-color;
     }
   }
-  
-
   &.btn-fill {
     color: $white-color;
     background-color: $btn-color;
     @include opacity(1);  
-
     &:hover,
     &:focus,
     &:active,
@@ -42,29 +37,22 @@
         background-color: $btn-states-color;
         color: $white-color;
     }
-    
     .caret{
         border-top-color: $white-color;
     }
   }
-  
   .caret{
       border-top-color: $btn-color;
   }
 }
-
-
 @mixin btn-size($padding-vertical, $padding-horizontal, $font-size, $border){
    font-size: $font-size;
    border-radius: $border;
    padding: $padding-vertical $padding-horizontal;
-    
    &.btn-round{
        padding: $padding-vertical + 1 $padding-horizontal;
    }
-   
    &.btn-simple{
        padding: $padding-vertical + 2 $padding-horizontal; 
    }
-    
 }
