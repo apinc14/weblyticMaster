@@ -2,14 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\apps",
-    "\\apps\\home",
-    "\\apps\\static",
-    "\\apps\\static\\assets",
-    "\\apps\\static\\assets\\img",
     "\\apps\\templates",
+    "\\apps\\templates\\accounts",
     "\\apps\\templates\\home",
     "\\apps\\templates\\includes",
-    "\\apps\\templates\\layouts"
+    "\\apps\\templates\\layouts",
+    "\\nginx"
   ],
   "PreviewInSolutionExplorer": false
 }

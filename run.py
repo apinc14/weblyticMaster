@@ -23,7 +23,6 @@ get_config_mode =  'Production'
 
 
 try:
-
     # Load the configuration using the default values
     app_config = config_dict[get_config_mode.capitalize()]
 
@@ -31,8 +30,9 @@ except KeyError:
     exit('Error: Invalid <config_mode>. Expected values [Debug, Production] ')
 
 app = create_app(app_config)
-# Register the authentication blueprint
-app.register_blueprint(authentication_blueprint, url_prefix='/authentication')
+
+
+
 
 if not DEBUG:
     Minify(app=app, html=True, js=False, cssless=False)

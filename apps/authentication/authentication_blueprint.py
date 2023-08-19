@@ -3,34 +3,41 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-from flask import render_template, redirect, request, url_for
+
 from flask_login import (
     current_user,
     login_user,
     logout_user
 )
-
-
 from apps import login_manager
 from apps.dbModels import dbPerform, dbActionInsertUser, dbActionRetreiveUser
 from apps.authentication import blueprint
+from apps.home import blueprint as home_blueprint
 from apps.authentication.forms import LoginForm, CreateAccountForm
 from apps.authentication.models import Users
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, redirect, url_for, make_response, g, render_template, request, url_for
 from apps.authentication.util import verify_pass
 
-blueprint = Blueprint('authentication_blueprint', __name__)
+@blueprint.before_request
+def set_security_headers():
+    g.security_response = make_response()
+    g.security_response.headers['X-Frame-Options'] = 'DENY'
+    g.security_response.headers['X-Content-Type-Options'] = 'nosniff'
+    g.security_response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    g.security_response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-src 'none'"
+
+
+
+
+
 
 @blueprint.route('/')
-def route_default():
-    response = redirect(url_for('home_blueprint.cover'))
-      # Set security headers
-    response.headers['X-Frame-Options'] = 'DENY'  # or 'SAMEORIGIN' if needed
-    response.headers['X-Content-Type-Options'] = 'nosniff'
-    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
-    response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-src 'none'"
+def route_default():  
+    return redirect(url_for('home_blueprint.cover'))
 
-    return response
+
+
+ 
 
 
 
@@ -61,7 +68,7 @@ def login():
     if not current_user.is_authenticated:
         return render_template('accounts/login.html',
                                form=login_form)
-    return redirect(url_for('home_blueprint.index'))
+    return redirect(url_for('home_blueprint.route_default'))
 
 
 @blueprint.route('/register', methods=['GET', 'POST'])
