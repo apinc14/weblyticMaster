@@ -37,16 +37,19 @@
                     <div class="card-body table-full-width table-responsive">
                         <table class="table table-hover table-striped">
                             <thead>
-                            <th>ID</th>
-                            <th>Post Title</th>
-                            <th>Post Content</th>
-                            <th>Post Score</th>
-                            <th>Number of Comments</th>
+                                <tr>
+
+                                    <th>Post Title</th>
+                                    <th>Post Content</th>
+                                    <th>Post Score</th>
+                                    <th>Number of Comments</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 {% for post in resultsPosts %}
                                 <tr>
-                                   
+                                    
+
                                     <td>{{ post.post_title }}</td>
                                     <td>{{ post.post_content }}</td>
                                     <td>{{ post.post_score }}</td>

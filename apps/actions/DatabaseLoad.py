@@ -21,39 +21,37 @@ def initDB():
     )
     return connection
 
-def getFromDb():
+def getFromDbTotals():
+    return TryTaskSQLQueries('SELECT * FROM totals ORDER BY score DESC LIMIT 20;')
+        
+
+def getFromDbPosts():
+   return TryTaskSQLQueries('SELECT * FROM posts ORDER BY post_score DESC LIMIT 20;')
+  
+        
+def TryTaskSQLQueries(SqlQuery):
     connection = initDB()
     try:
         # Create a cursor object to interact with the database
         with connection.cursor() as cursor:
             # Define your SQL query to retrieve data from a table
-            sql_query_posts = '''SELECT *
-                                FROM posts
-                                ORDER BY post_score DESC
-                                LIMIT 20;'''
-
-            sql_query_totals = 'SELECT * FROM totals ORDER BY score DESC LIMIT 20;'
-
-            
+            sql_query_posts = SqlQuery
 
             # Execute the SQL query
             cursor.execute(sql_query_posts)
-            resultsPosts = cursor.fetchall()
+            results = cursor.fetchall()
 
-            cursor.execute(sql_query_totals)
-            resultsTotals = cursor.fetchall()
+            
             # Fetch all the results as a list of tuples
            
 
             # Process the retrieved data (replace this with your actual data processing logic)
-            for row in resultsPosts:
+            for row in results:
                 print(row)  # You can replace this with your desired data processing code
-            for row in resultsTotals:
-                print(row)  # You can replace this with your desired data processing code
+           
             connection.close()
-            return resultsPosts, resultsTotals
+            return results
 
     finally:
         pass
         # Close the database connection when done
-        
