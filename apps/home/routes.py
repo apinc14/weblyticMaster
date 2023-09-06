@@ -6,13 +6,28 @@ from apps.home import blueprint
 from flask import render_template, request
 from flask_login import login_required
 from jinja2 import TemplateNotFound
-@blueprint.route('/index')
+from apps.actions import DatabaseLoad
 #@login_required
+@blueprint.route('/entry')
+def entry():
+
+    return render_template('home/entry.html', segment='entry')
+@blueprint.route('/index')
 def index():
     return render_template('home/index.html', segment='index')
 @blueprint.route('/cover')
 def cover():
     return render_template('home/cover.html', segment='cover')
+@blueprint.route('/table')
+def table():
+    resultsPosts, resultsTotals = DatabaseLoad.getFromDb()
+    print("totals",resultsTotals)
+    print("posts",resultsPosts)
+    print(len(resultsPosts), "lensP",)
+    print(len(resultsTotals), "lensT",)
+
+
+    return render_template('home/table.html', segment='table', resultsPosts=resultsPosts, resultsTotals=resultsTotals )
 @blueprint.route('/<template>')
 #@login_required
 def route_template(template):

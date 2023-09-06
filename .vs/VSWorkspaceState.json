@@ -2,13 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\apps",
+    "\\apps\\actions",
+    "\\apps\\home",
+    "\\apps\\static",
+    "\\apps\\static\\assets",
     "\\apps\\templates",
-    "\\apps\\templates\\accounts",
-    "\\apps\\templates\\home",
     "\\apps\\templates\\includes",
     "\\apps\\templates\\layouts",
     "\\nginx"
   ],
-  "SelectedNode": "\\run.py",
+  "SelectedNode": "\\apps\\actions\\DatabaseLoad.py",
   "PreviewInSolutionExplorer": false
 }

@@ -8,13 +8,14 @@ from flask_login import (
     logout_user
 )
 from apps import login_manager
-from apps.dbModels import dbPerform, dbActionInsertUser, dbActionRetreiveUser
+from apps.dbUserModels import dbPerform, dbActionInsertUser, dbActionRetreiveUser
 from apps.authentication import blueprint
 from apps.home import blueprint as home_blueprint
 from apps.authentication.forms import LoginForm, CreateAccountForm
 from apps.authentication.models import Users
 from flask import Blueprint, redirect, url_for, make_response, g, render_template, request, url_for
 from apps.authentication.util import verify_pass
+
 @blueprint.before_request
 def set_security_headers():
     g.security_response = make_response()

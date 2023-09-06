@@ -1,21 +1,11 @@
 import os
 from dotenv import load_dotenv
 import pymysql
-def init_Db():
-    # Get the parent directory
-    current_directory = os.path.dirname(os.path.abspath(__file__))
-    parent_directory = os.path.dirname(current_directory)
-    envPath = parent_directory + '\.env'
-    load_dotenv(envPath)
-    dbCon = pymysql.connect(
-        user=os.environ.get('DB_USER'),
-        password=os.environ.get('DB_PASSWORD'),
-        host=os.environ.get('IP_ADDRESS'),
-        database=os.environ.get('DB_NAME')
-     )
-    # Connect to the database
-    cursor = dbCon.cursor()
-    return dbCon, cursor
+from apps.config import config_dict
+from apps import create_app
+from flask import Flask
+
+
 def dbPerform( action, isInboundBool ):
     dbCon, cursor = init_Db()
     try:

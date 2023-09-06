@@ -4,9 +4,10 @@ Copyright (c) 2019 - present AppSeed.us
 """
 from flask_login import UserMixin
 from apps import login_manager
-from apps.dbModels import dbPerform, dbActionRetreiveUser
+from apps.dbUserModels import dbPerform, dbActionRetreiveUser
 from apps.authentication.util import hash_pass
 import os
+
 class Users( UserMixin):
     def __init__(self, user, email, password, activePremium, billingDate):
         self.uid = uid
