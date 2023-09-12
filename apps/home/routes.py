@@ -18,27 +18,27 @@ print("did start call")
 
 
 #@login_required
-@blueprint.route('/Entry')
+@blueprint.route('/entry')
 def entry():
 
     return render_template('home/entry.html', segment='entry')
-@blueprint.route('/Index')
+@blueprint.route('/index')
 def index():
     return render_template('home/index.html', segment='index')
-@blueprint.route('/Cover')
+@blueprint.route('/cover')
 def cover():
     return render_template('home/cover.html', segment='cover')
 
-@blueprint.route('/Totals Table')
+@blueprint.route('/totals table')
 def totalsTable():
     data = DatabaseLoad.getFromDbTotals()
     return render_template('home/totalsTable.html', segment='totalsTable', resultsTotals= data )
-@blueprint.route('/Post Table')
+@blueprint.route('/post table')
 def postTable():
     data = DatabaseLoad.getFromDbPosts()
     return render_template('home/postTable.html', segment='Post Table' ,resultsPosts = data)
 
-
+    
 
 
 @blueprint.route('/<template>')

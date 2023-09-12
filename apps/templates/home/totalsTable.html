@@ -3,267 +3,350 @@
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<script src="database.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
-<div class="content">
-    <div class="row d-flex g-2 p-2  txt-algn-center">
-        <!--
-             <div class="dropdown">
-            <button class="dropbtn">Categories</button>
-            <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Date</button>
-            <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </div>
-            -->
-    </div>
-    <div class="container-fluid">
-        <div class="column">
-            <div class="col-md-12">
-                <div class="card strpied-tabled-with-hover">
-                    <div class="card-header ">
-                        <h4 class="card-title">Positive</h4>
-                        <p class="card-category">Here is a subtitle for this table</p>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+<div class="container-fluid">
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-row-nowrap pt-3 pb-2 mb-3 border-bottom">
+
+
+            <h1 class="h2">Dashboard</h1>
+
+            <div class="d-flex align-items-center me-2">
+
+                <div class="btn-group me-2">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary ">Export</button>
+                </div>
+
+
+
+                <div class="dropdown me-2">
+                    <button onclick="myFunction()" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                        Type
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#" data-type="People">People</a>
+                        <a href="#" data-type="Locations">Locations</a>
+                        <a href="#" data-type="Organizations">Organizations</a>
+                        <a id ="getDataButton"href="#" data-type="Miscellaneous">Miscellaneous</a>
                     </div>
-                    <div class="card-body table-full-width table-responsive">
-                        <table class="table table-hover table-striped">
-                            <thead>
-                                <tr>
-                                
-                                
+                </div>
+
+
+
+
+                <div class="d-flex justify-content-between flex-row-nowrap pt-3 pb-2 mb-3 border-bottom me-2">
+
+                    <div class="d-flex align-items-center">
+                        <label for="from">Date:</label>
+                        <input type="text" id="from" name="from">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <label class="text-center " for="to"> to </label>
+                        <input type="text" id="to" name="to">
+
+
+
+                    </div>
+
+                    <script>
+                        
+                        console.log("pass!"); // Prints "Hello, World!" to the console
+
+                    </script>
+
+
+
+                    <script>
+
+
+                        $("#from, #to").datepicker({
+
+                            defaultDate: "+1w",
+                            changeMonth: true,
+                            numberOfMonths: 1,
+                            onSelect: function (selectedDate) {
+                                if (this.id == 'from') {
+                                    var dateMin = $('#from').datepicker("getDate");
+                                    var rMin = new Date(dateMin.getFullYear(), dateMin.getMonth(), dateMin.getDate() + 1); // Min Date = Selected + 1d
+                                    var rMax = new Date(dateMin.getFullYear(), dateMin.getMonth(), dateMin.getDate() + 31); // Max Date = Selected + 31d
+                                    $('#to').datepicker("option", "minDate", rMin);
+                                    $('#to').datepicker("option", "maxDate", rMax);
+                                }
+
+                            }
+                        });
+
+
+                    </script>
+
+
+
+                </div>
+
+
+
+
+
+
+        </div>
+
+</div>
+
+
+
+
+<div class="container-fluid">
+
+    <div class="column">
+        <div class="col-md-12">
+            <div class="card strpied-tabled-with-hover">
+                <div class="card-header ">
+                    <h4 class="card-title">Positive</h4>
+                    <p class="card-category">Here is a subtitle for this table</p>
+                </div>
+                <div class="card-body table-full-width table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+
+
                                 <th>Entity</th>
                                 <th>Total Score</th>
                                 <th>Type</th>
-                                </tr>
-                            </thead>
-                            
-                            <tbody>
-                                {% set type_dict = {'LOC': 'Location', 'PER': 'Person', 'ORG': 'Organization', 'MISC': 'Miscellaneous'} %}
+                            </tr>
+                        </thead>
 
-                                {% for t in resultsTotals %}
-                                <tr>
-                                    <td>{{ t.entity }}</td>
-                                    <td>{{ t.score }}</td>
-                                    <td>{{ type_dict[t.type] }}</td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
+                        <tbody>
+                            {% set type_dict = {'LOC': 'Location', 'PER': 'Person', 'ORG': 'Organization', 'MISC': 'Miscellaneous'} %}
 
-                    </div>
+                            {% for t in resultsTotals %}
+                            <tr>
+                                <td>{{ t.entity }}</td>
+                                <td>{{ t.score }}</td>
+                                <td>{{ type_dict[t.type] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
                 </div>
-                <div class="row-bott"
-                            <h2>  <small>Load More</small> </h2>
-                            <span class="material-symbols-outlined">
-                                expand_circle_down
-                            </span>
-                     </div>
-                <!-- break -->
-                <div class="card strpied-tabled-with-hover">
-                    <div class="card-header">
-                        <h4 class="card-title">Mixed</h4>
-                        <p class="card-category">Here is a subtitle for this table</p>
-                    </div>
-                    <div class="card-body table-full-width table-responsive">
-                        <table class="table table-hover table-striped">
-                            <thead>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Salary</th>
-                            <th>Country</th>
-                            <th>City</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Sage Rodriguez</td>
-                                    <td>$56,142</td>
-                                    <td>Netherlands</td>
-                                    <td>Baileux</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Philip Chaney</td>
-                                    <td>$38,735</td>
-                                    <td>Korea, South</td>
-                                    <td>Overland Park</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Doris Greene</td>
-                                    <td>$63,542</td>
-                                    <td>Malawi</td>
-                                    <td>Feldkirchen in Kärnten</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Mason Porter</td>
-                                    <td>$78,615</td>
-                                    <td>Chile</td>
-                                    <td>Gloucester</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Dakota Rice</td>
-                                    <td>$36,738</td>
-                                    <td>Niger</td>
-                                    <td>Oud-Turnhout</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Minerva Hooper</td>
-                                    <td>$23,789</td>
-                                    <td>Curaçao</td>
-                                    <td>Sinaai-Waas</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Sage Rodriguez</td>
-                                    <td>$56,142</td>
-                                    <td>Netherlands</td>
-                                    <td>Baileux</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Philip Chaney</td>
-                                    <td>$38,735</td>
-                                    <td>Korea, South</td>
-                                    <td>Overland Park</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Doris Greene</td>
-                                    <td>$63,542</td>
-                                    <td>Malawi</td>
-                                    <td>Feldkirchen in Kärnten</td>
-                                    <td class="topicPic"><img src="https://picsum.photos/50"></td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Mason Porter</td>
-                                    <td>$78,615</td>
-                                    <td>Chile</td>
-                                    <td>Gloucester</td>
-                                    <td class="topicPic"><img src="https://picsum.photos/50"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="row-bott"
-                            <h2>  <small>Load More</small> </h2>
-                            <span class="material-symbols-outlined">
-                               expand_circle_down
-                            </span>
-                     </div>
-                <!-- break -->
-                <div class="card strpied-tabled-with-hover">
-                    <div class="card-header ">
-                        <h4 class="card-title">Negative</h4>
-                        <p class="card-category">Here is a subtitle for this table</p>
-                    </div>
-                    <div class="card-body table-full-width table-responsive">
-                        <table class="table table-hover table-striped">
-                            <thead>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Salary</th>
-                            <th>Country</th>
-                            <th>City</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Sage Rodriguez</td>
-                                    <td>$56,142</td>
-                                    <td>Netherlands</td>
-                                    <td>Baileux</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Philip Chaney</td>
-                                    <td>$38,735</td>
-                                    <td>Korea, South</td>
-                                    <td>Overland Park</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Doris Greene</td>
-                                    <td>$63,542</td>
-                                    <td>Malawi</td>
-                                    <td>Feldkirchen in Kärnten</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Mason Porter</td>
-                                    <td>$78,615</td>
-                                    <td>Chile</td>
-                                    <td>Gloucester</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Dakota Rice</td>
-                                    <td>$36,738</td>
-                                    <td>Niger</td>
-                                    <td>Oud-Turnhout</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Minerva Hooper</td>
-                                    <td>$23,789</td>
-                                    <td>Curaçao</td>
-                                    <td>Sinaai-Waas</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Sage Rodriguez</td>
-                                    <td>$56,142</td>
-                                    <td>Netherlands</td>
-                                    <td>Baileux</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Philip Chaney</td>
-                                    <td>$38,735</td>
-                                    <td>Korea, South</td>
-                                    <td>Overland Park</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Doris Greene</td>
-                                    <td>$63,542</td>
-                                    <td>Malawi</td>
-                                    <td>Feldkirchen in Kärnten</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Mason Porter</td>
-                                    <td>$78,615</td>
-                                    <td>Chile</td>
-                                    <td>Gloucester</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="row-bott"
-                            <h2>  <small>Load More</small> </h2>
-                            <span class="material-symbols-outlined">
-                               expand_circle_down
-                            </span>
-                     </div>
             </div>
+            <div class="row-bott"
+                                            <h2>  <small>Load More</small> </h2>
+                                            <span class="material-symbols-outlined">
+                                                expand_circle_down
+                                            </span>
+                                     </div>
+            <!-- break -->
+            <div class="card strpied-tabled-with-hover">
+                <div class="card-header">
+                    <h4 class="card-title">Mixed</h4>
+                    <p class="card-category">Here is a subtitle for this table</p>
+                </div>
+                <div class="card-body table-full-width table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Salary</th>
+                        <th>Country</th>
+                        <th>City</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3</td>
+                                <td>Sage Rodriguez</td>
+                                <td>$56,142</td>
+                                <td>Netherlands</td>
+                                <td>Baileux</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Philip Chaney</td>
+                                <td>$38,735</td>
+                                <td>Korea, South</td>
+                                <td>Overland Park</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Doris Greene</td>
+                                <td>$63,542</td>
+                                <td>Malawi</td>
+                                <td>Feldkirchen in Kärnten</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Mason Porter</td>
+                                <td>$78,615</td>
+                                <td>Chile</td>
+                                <td>Gloucester</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Dakota Rice</td>
+                                <td>$36,738</td>
+                                <td>Niger</td>
+                                <td>Oud-Turnhout</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Minerva Hooper</td>
+                                <td>$23,789</td>
+                                <td>Curaçao</td>
+                                <td>Sinaai-Waas</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Sage Rodriguez</td>
+                                <td>$56,142</td>
+                                <td>Netherlands</td>
+                                <td>Baileux</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Philip Chaney</td>
+                                <td>$38,735</td>
+                                <td>Korea, South</td>
+                                <td>Overland Park</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Doris Greene</td>
+                                <td>$63,542</td>
+                                <td>Malawi</td>
+                                <td>Feldkirchen in Kärnten</td>
+                                <td class="topicPic"><img src="https://picsum.photos/50"></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Mason Porter</td>
+                                <td>$78,615</td>
+                                <td>Chile</td>
+                                <td>Gloucester</td>
+                                <td class="topicPic"><img src="https://picsum.photos/50"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row-bott"
+                                            <h2>  <small>Load More</small> </h2>
+                                            <span class="material-symbols-outlined">
+                                               expand_circle_down
+                                            </span>
+                                     </div>
+            <!-- break -->
+            <div class="card strpied-tabled-with-hover">
+                <div class="card-header ">
+                    <h4 class="card-title">Negative</h4>
+                    <p class="card-category">Here is a subtitle for this table</p>
+                </div>
+                <div class="card-body table-full-width table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Salary</th>
+                        <th>Country</th>
+                        <th>City</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3</td>
+                                <td>Sage Rodriguez</td>
+                                <td>$56,142</td>
+                                <td>Netherlands</td>
+                                <td>Baileux</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Philip Chaney</td>
+                                <td>$38,735</td>
+                                <td>Korea, South</td>
+                                <td>Overland Park</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Doris Greene</td>
+                                <td>$63,542</td>
+                                <td>Malawi</td>
+                                <td>Feldkirchen in Kärnten</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Mason Porter</td>
+                                <td>$78,615</td>
+                                <td>Chile</td>
+                                <td>Gloucester</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Dakota Rice</td>
+                                <td>$36,738</td>
+                                <td>Niger</td>
+                                <td>Oud-Turnhout</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Minerva Hooper</td>
+                                <td>$23,789</td>
+                                <td>Curaçao</td>
+                                <td>Sinaai-Waas</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Sage Rodriguez</td>
+                                <td>$56,142</td>
+                                <td>Netherlands</td>
+                                <td>Baileux</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Philip Chaney</td>
+                                <td>$38,735</td>
+                                <td>Korea, South</td>
+                                <td>Overland Park</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Doris Greene</td>
+                                <td>$63,542</td>
+                                <td>Malawi</td>
+                                <td>Feldkirchen in Kärnten</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Mason Porter</td>
+                                <td>$78,615</td>
+                                <td>Chile</td>
+                                <td>Gloucester</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row-bott"
+                                            <h2>  <small>Load More</small> </h2>
+                                            <span class="material-symbols-outlined">
+                                               expand_circle_down
+                                            </span>
+                                     </div>
         </div>
     </div>
-    {% endblock content %}
-    <!-- Specific Page JS goes HERE  -->
-    {% block javascripts %}{% endblock javascripts %}
+</div>
+        {% endblock content %}
+<!-- Specific Page JS goes HERE  -->
+        {% block javascripts %}{% endblock javascripts %}
+    </main>
+</div>

@@ -1,31 +1,26 @@
 {% extends "layouts/base.html" %}
-{% block title %} UI Tables {% endblock %} 
+{% block title %} UI Tables {% endblock %}
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<div class="content">
-    <div class="row d-flex g-2 p-2  txt-algn-center">
-        <!--
-         <div class="dropdown">
-        <button class="dropbtn">Categories</button>
-        <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+            </button>
         </div>
     </div>
-    <div class="dropdown">
-        <button class="dropbtn">Date</button>
-        <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
-    </div>
-        -->
-    </div>
+   
     <div class="container-fluid">
         <div class="column">
             <div class="col-md-12">
@@ -48,7 +43,7 @@
                             <tbody>
                                 {% for post in resultsPosts %}
                                 <tr>
-                                    
+
 
                                     <td>{{ post.post_title }}</td>
                                     <td>{{ post.post_content }}</td>
@@ -267,3 +262,5 @@
     {% endblock content %}
     <!-- Specific Page JS goes HERE  -->
     {% block javascripts %}{% endblock javascripts %}
+</main>
+</main>
